@@ -1,7 +1,12 @@
 @import './base.css';
 
 body {
-  margin: 0;
+  margin: auto;
+  display: flex;
+  padding-left: 5em;
+  padding-right: 5em;
+  justify-content: center;
+  align-items: center;
   background: radial-gradient(circle at bottom left, #2e3b56 0%, #2f234d 40%, #1f1a3d 100%);
   max-height: 100vh;
 }
