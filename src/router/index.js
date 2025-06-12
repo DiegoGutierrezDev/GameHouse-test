@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import AppRegisterLayout from '../views/layouts/AppRegisterLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'registerStep1',
+      component: () => import('../views/layouts/AppRegisterLayout.vue'),
+      meta: {
+        layout: AppRegisterLayout,
+      },
     },
     {
       path: '/about',
