@@ -3,7 +3,7 @@ const props = defineProps({
   text: String,
   theme: {
     type: String,
-    default: 'LOrange',
+    default: 'M-purple',
   },
 })
 </script>
@@ -15,7 +15,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.Mpurple {
+.M-purple {
   background-color: #c2b4f7;
   height: 3em;
   border-radius: 0.5rem;
@@ -23,7 +23,7 @@ const props = defineProps({
   font-size: large;
 }
 
-.LOrange {
+.L-orange {
   background-color: #fccd61;
   width: 18em;
   height: 3em;

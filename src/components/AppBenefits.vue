@@ -33,7 +33,7 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.benefitsClass {
+.benefits-class {
   display: flex;
   align-items: center;
   padding: 0.3em;
@@ -45,7 +45,7 @@ const props = defineProps({
   }
 }
 
-.benefitsClass:nth-child(odd) {
+.benefits-class:nth-child(odd) {
   background: none;
 }
 </style>
