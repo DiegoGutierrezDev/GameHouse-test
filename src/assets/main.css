@@ -64,6 +64,11 @@ h1 {
   color: white;
 }
 
+strong {
+  font-weight: 700;
+  color: #cda74e;
+}
+
 .one-column {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
