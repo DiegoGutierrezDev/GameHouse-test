@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-for="(benefit, index) in props.benefits" :key="index" class="benefitsClass">
+  <div v-for="(benefit, index) in props.benefits" :key="index" class="benefits-class">
     <svg
       version="1.1"
       id="Layer_1"
@@ -36,7 +36,7 @@ const props = defineProps({
 .benefits-class {
   display: flex;
   align-items: center;
-  padding: 0.3em;
+  padding: 1em;
   color: white;
   background: linear-gradient(135deg, #7a3fa2, #5d2c7f, #3e1d52);
   span {
@@ -45,7 +45,7 @@ const props = defineProps({
   }
 }
 
-.benefits-class:nth-child(odd) {
+.benefits-class:nth-child(even) {
   background: none;
 }
 </style>

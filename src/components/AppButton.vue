@@ -17,7 +17,7 @@ const props = defineProps({
 <style scoped>
 .M-purple {
   background-color: #c2b4f7;
-  height: 3em;
+  height: 3.3em;
   border-radius: 0.5rem;
   font-weight: 600;
   font-size: large;
@@ -25,8 +25,8 @@ const props = defineProps({
 
 .L-orange {
   background-color: #fccd61;
-  width: 18em;
-  height: 3em;
+  width: 30em;
+  height: 3.3em;
   border-radius: 0.5rem;
   font-weight: 600;
   font-size: large;

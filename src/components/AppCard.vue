@@ -8,7 +8,7 @@
       <h2 class="white-text">Annual</h2>
     </div>
 
-    <div style="margin-top: 12px">
+    <div style="" class="price-container">
       <span class="white-text">$ 87.99</span>
       <span class="white-text">/year</span>
     </div>
@@ -20,6 +20,25 @@
 </template>
 
 <style scoped>
+.plan-card {
+  position: relative;
+  background: linear-gradient(to right, #2f234d, #3c2e72);
+  border-radius: 1em;
+  border: 3px solid transparent;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #ffc978, #fd6a6a, #b991c0, #7ed6df) 1;
+}
+
+.price-container {
+  margin-top: 12px;
+  padding-left: 5.8em;
+  padding-right: 5.8em;
+}
+
 .card-header {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   padding-left: 0.4em;
@@ -51,20 +70,6 @@
 
 .checkbox-round:checked {
   background-color: #afeea7;
-}
-
-.plan-card {
-  position: relative;
-  background: linear-gradient(to right, #2f234d, #3c2e72);
-  border-radius: 1em;
-  border: 3px solid transparent;
-  text-align: center;
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  max-width: 260px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  background-clip: padding-box;
-  border-image: linear-gradient(90deg, #ffc978, #fd6a6a, #b991c0, #7ed6df) 1;
 }
 
 .badge {
