@@ -25,7 +25,7 @@ const props = defineProps({
 
 .L-orange {
   background-color: #fccd61;
-  width: 18em;
+  width: 30em;
   height: 3.3em;
   border-radius: 0.5rem;
   font-weight: 600;

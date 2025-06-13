@@ -22,7 +22,7 @@ import AppButton from '@/components/AppButton.vue'
     </div>
 
     <div class="white-text">
-      <h1 style="font-weight: 700">Connect your account</h1>
+      <h1>Connect your account</h1>
       <h3>...and unlock your benefits!</h3>
       <input type="text" class="input-text" placeholder="Email Address" />
 

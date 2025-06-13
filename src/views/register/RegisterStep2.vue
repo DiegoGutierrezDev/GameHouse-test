@@ -17,7 +17,7 @@ import AppOTP from '@/components/AppOTP.vue'
     </div>
 
     <div class="white-text">
-      <h1 style="font-weight: 700">Get verified!</h1>
+      <h1>Get verified!</h1>
       <h3>Enter the one-time code we sent to:</h3>
       EMAIL
       <AppOTP style="margin-top: 1.4em"></AppOTP>

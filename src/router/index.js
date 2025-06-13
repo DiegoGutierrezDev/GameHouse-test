@@ -29,6 +29,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/step3',
+      name: 'registerStep3',
+      component: () => import('../views/register/RegisterStep3.vue'),
+      meta: {
+        layout: AppRegisterLayout,
+      },
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

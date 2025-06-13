@@ -58,6 +58,20 @@ a {
   color: rgb(2, 151, 151);
   text-decoration: none;
 }
+
+h1 {
+  font-weight: 700;
+  color: white;
+}
+
+.one-column {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .left-column {
   align-content: space-evenly;
   flex-direction: column;
@@ -77,6 +91,13 @@ a {
   text-align: center;
   font-size: 1.2em;
   color: white;
+}
+
+.grey-text {
+  justify-self: center;
+  text-align: center;
+  font-size: 1em;
+  color: grey;
 }
 
 .input-text {
