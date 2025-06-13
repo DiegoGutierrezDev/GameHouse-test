@@ -69,6 +69,13 @@ strong {
   color: #cda74e;
 }
 
+.centered {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
 .one-column {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
