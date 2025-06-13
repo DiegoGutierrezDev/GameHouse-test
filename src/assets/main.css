@@ -1,14 +1,30 @@
 @import './base.css';
 
 body {
-  margin: auto;
+  margin: 0;
   display: flex;
-  padding-left: 5em;
-  padding-right: 5em;
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle at bottom left, #2e3b56 0%, #2f234d 40%, #1f1a3d 100%);
-  max-height: 100vh;
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::before,
@@ -36,4 +52,48 @@ body::after {
   background: #cda74e;
   top: -100px;
   left: 100px;
+}
+
+a {
+  color: rgb(2, 151, 151);
+  text-decoration: none;
+}
+.left-column {
+  align-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+}
+.left-column p {
+  margin-top: auto;
+}
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5rem;
+}
+
+.white-text {
+  justify-self: center;
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+}
+
+.input-text {
+  width: 100%;
+  height: 4em;
+  border-radius: 0.5em;
+  padding: 2em;
+  margin-top: 2em;
+}
+
+.checkbox {
+  width: 1.3em;
+  height: 1.3em;
+  border-color: white;
+  border: 2px solid #ddd;
+  appearance: none;
+  cursor: pointer;
+  margin-right: 0.8em;
+  margin-top: 6em;
 }

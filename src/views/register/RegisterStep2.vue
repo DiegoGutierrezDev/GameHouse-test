@@ -1,6 +1,7 @@
 <script setup>
 import AppBenefits from '@/components/AppBenefits.vue'
 import AppButton from '@/components/AppButton.vue'
+import AppOTP from '@/components/AppOTP.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import AppButton from '@/components/AppButton.vue'
       <h1 style="font-weight: 700">Get verified!</h1>
       <h3>Enter the one-time code we sent to:</h3>
       EMAIL
+      <AppOTP style="margin-top: 1.4em"></AppOTP>
 
       <p style="margin-top: 3em">
         Didn't get an email?
@@ -29,47 +31,3 @@ import AppButton from '@/components/AppButton.vue'
     </div>
   </main>
 </template>
-
-<style>
-a {
-  color: rgb(2, 151, 151);
-  text-decoration: none;
-}
-.left-column {
-  align-content: space-evenly;
-}
-.left-column p {
-  margin-top: auto;
-}
-.columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 5rem;
-}
-
-.white-text {
-  justify-self: center;
-  text-align: center;
-  font-size: 1.2em;
-  color: white;
-}
-
-.input-text {
-  width: 100%;
-  height: 4em;
-  border-radius: 0.5em;
-  padding: 2em;
-  margin-top: 2em;
-}
-
-.checkbox {
-  width: 1.3em;
-  height: 1.3em;
-  border-color: white;
-  border: 2px solid #ddd;
-  appearance: none;
-  cursor: pointer;
-  margin-right: 0.8em;
-  margin-top: 6em;
-}
-</style>
