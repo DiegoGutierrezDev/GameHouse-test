@@ -5,7 +5,7 @@ const otpCont = ref(null)
 </script>
 
 <template>
-  <div ref="otpCont">
+  <div ref="otpCont" class="code-container">
     <input
       type="text"
       class="code-box"
@@ -17,13 +17,12 @@ const otpCont = ref(null)
       @focus="!value"
       @keydown="handleKeyDown($event, ind)"
     />
-    <h2>hoasdjf</h2>
   </div>
 </template>
 
-<style>
+<style scoped>
 .code-box {
-  width: 3rem;
+  width: 3.7rem;
   height: 3rem;
   border-radius: 0.5rem;
   background-color: white;
@@ -31,5 +30,9 @@ const otpCont = ref(null)
   font-weight: 600;
   text-align: center;
   margin: 0.1em;
+}
+
+.code-container {
+  width: 30em;
 }
 </style>
