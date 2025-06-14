@@ -34,17 +34,23 @@ const props = defineProps({
 
 <style scoped>
 .benefits-class {
+  padding: 0.4em;
   display: flex;
   align-items: center;
-  padding: 1em;
   color: white;
   background: linear-gradient(135deg, #7a3fa2, #5d2c7f, #3e1d52);
-  span {
+}
+
+@media (min-width: 641px) {
+  .benefits-class {
+    padding: 1em;
+  }
+
+  .benefits-class span {
     font-weight: 500;
     font-size: large;
   }
 }
-
 .benefits-class:nth-child(even) {
   background: none;
 }
