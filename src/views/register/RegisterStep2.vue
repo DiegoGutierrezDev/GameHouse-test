@@ -11,7 +11,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
       <div class="left-column">
         <AppBenefits
           :benefits="[
-            'Access to 10+ GAMES for FREE thanks to ads',
+            'Access to 100+ GAMES for FREE thanks to ads',
             'Log In Across All Your Devices',
             'Skip the Line with Customer Support',
           ]"
