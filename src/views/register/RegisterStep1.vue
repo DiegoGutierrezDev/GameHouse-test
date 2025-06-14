@@ -41,7 +41,7 @@ onUnmounted(() => {
       </div>
     </div>
     <template v-else>
-      <div id="a">
+      <div id="a" style="margin-bottom: 4em">
         <AppBenefits
           :benefits="[
             'Access to 10+ GAMES for FREE thanks to ads',
@@ -75,15 +75,17 @@ onUnmounted(() => {
       </div>
     </div>
     <template v-else>
-      <div id="c">
+      <div id="c" style="margin-bottom: 1.3em">
         <h1>Connect your account</h1>
         <h3>...and unlock your benefits!</h3>
       </div>
-      <div id="d">
+      <div id="d" style="" class="one-column">
         <input type="text" class="input-text" placeholder="Email Address" />
+        <div>
+          <input type="checkbox" class="checkbox" id="comercial" />
+          <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
+        </div>
 
-        <input type="checkbox" class="checkbox" id="comercial" />
-        <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
         <AppButton text="Connect" style="display: block; width: 100%; margin-top: 1em"></AppButton>
       </div>
     </template>
