@@ -100,6 +100,7 @@ strong {
 .one-column {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2em;
   justify-items: center;
   align-items: center;
 }
@@ -123,14 +124,14 @@ strong {
   margin-top: auto;
 }
 
-@media (min-width: 641px) {
-  .centered {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    justify-items: center;
-    align-items: center;
-  }
+.centered {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+}
 
+@media (min-width: 641px) {
   .one-column {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));

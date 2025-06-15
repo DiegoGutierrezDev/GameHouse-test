@@ -28,8 +28,8 @@ const props = defineProps({
 
 .L-orange {
   background-color: #fccd61;
-  width: 30em;
   height: 3.3em;
+  width: 100%;
   display: block;
   margin-top: 1em;
   border-radius: 0.5rem;
@@ -43,7 +43,7 @@ const props = defineProps({
   }
 
   .L-orange {
-    width: 100%;
+    width: 30em;
   }
 }
 </style>
