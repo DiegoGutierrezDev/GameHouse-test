@@ -18,7 +18,7 @@ const props = defineProps({
 .M-purple {
   background-color: #c2b4f7;
   height: 3.3em;
-  width: 90%;
+  width: 80%;
   display: block;
   margin-top: 1em;
   border-radius: 0.5rem;

@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="outter-margin">
+  <div class="benefits-container">
     <div v-for="(benefit, index) in props.benefits" :key="index" class="benefits-class">
       <svg
         version="1.1"
@@ -35,8 +35,8 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.outter-margin {
-  margin-top: 4.5em;
+.benefits-container {
+  margin-top: 3em;
   margin-bottom: 5em;
   width: 100%;
 }

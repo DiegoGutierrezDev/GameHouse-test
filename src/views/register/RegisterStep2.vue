@@ -36,7 +36,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
       </p></template
     >
     <template #button>
-      <AppButton text="Verify" style="display: block; width: 100%; margin-top: 1em"></AppButton>
+      <AppButton text="Verify"></AppButton>
     </template>
   </PageWrapper>
 </template>
