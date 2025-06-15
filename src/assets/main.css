@@ -8,6 +8,8 @@ body {
   background: radial-gradient(circle at bottom left, #2e3b56 0%, #2f234d 40%, #1f1a3d 100%);
   min-height: 100vh;
   line-height: 1.6;
+  color: white;
+  text-align: center;
   font-family:
     Inter,
     -apple-system,
@@ -61,41 +63,11 @@ a {
 
 h1 {
   font-weight: 700;
-  color: white;
 }
 
 strong {
   font-weight: 700;
   color: #cda74e;
-}
-
-.centered {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-}
-
-.one-column {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.left-column {
-  align-content: space-evenly;
-  flex-direction: column;
-  display: flex;
-}
-.left-column p {
-  margin-top: auto;
-}
-.columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 5rem;
 }
 
 .white-text {
@@ -112,12 +84,25 @@ strong {
   color: grey;
 }
 
+.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .input-text {
-  width: 100%;
+  width: 80%;
   height: 4em;
   border-radius: 0.5em;
   padding: 2em;
-  margin-top: 2em;
+}
+
+.one-column {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2em;
+  justify-items: center;
+  align-items: center;
 }
 
 .checkbox {
@@ -129,4 +114,50 @@ strong {
   cursor: pointer;
   margin-right: 0.8em;
   margin-top: 6em;
+}
+
+.left-column {
+  display: grid;
+  align-content: space-between;
+}
+.left-column p {
+  margin-top: auto;
+}
+
+.centered {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 641px) {
+  .one-column {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .left-column {
+    display: grid;
+    align-content: space-between;
+  }
+  .left-column p {
+    margin-top: auto;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5rem;
+  }
+
+  .input-text {
+    width: 100%;
+    height: 4em;
+    border-radius: 0.5em;
+    padding: 2em;
+    margin-top: 2em;
+  }
 }

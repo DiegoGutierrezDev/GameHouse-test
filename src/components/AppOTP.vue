@@ -34,5 +34,6 @@ const otpCont = ref(null)
 
 .code-container {
   width: 30em;
+  margin-bottom: 4em;
 }
 </style>
