@@ -3,11 +3,24 @@ import AppBenefits from '@/components/AppBenefits.vue'
 import AppButton from '@/components/AppButton.vue'
 import AppOTP from '@/components/AppOTP.vue'
 import PageWrapper from '../layouts/PageWrapper.vue'
-
+import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
 
+const otpValue = ref('')
 const userStore = useUserStore()
 const email = userStore.email.email
+
+async function verifyCode(code) {
+  console.log('Código recibido del hijo:', code)
+
+  await fetch('/api/validate-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email: userStore.email.email, code }),
+  })
+}
 </script>
 
 <template>
@@ -25,7 +38,7 @@ const email = userStore.email.email
     </template>
 
     <template #input>
-      <AppOTP style="margin-top: 1.4em"></AppOTP>
+      <AppOTP style="margin-top: 1.4em" v-model:otp="otpValue" @completed="verifyCode"> </AppOTP>
     </template>
 
     <template #title>
@@ -41,7 +54,7 @@ const email = userStore.email.email
       </p></template
     >
     <template #button>
-      <AppButton text="Verify"></AppButton>
+      <AppButton text="Verify" @click="verifyCode"></AppButton>
     </template>
   </PageWrapper>
 </template>

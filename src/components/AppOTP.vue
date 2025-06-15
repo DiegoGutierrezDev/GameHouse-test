@@ -1,21 +1,41 @@
 <script setup>
-import { ref } from 'vue'
+import { reactive, watchEffect } from 'vue'
 
-const otpCont = ref(null)
+const emit = defineEmits(['update:otp', 'completed'])
+
+const digits = reactive(['', '', '', '', '', ''])
+
+watchEffect(() => {
+  const fullCode = digits.join('')
+  emit('update:otp', fullCode)
+
+  if (fullCode.length === 6 && !digits.includes('')) {
+    emit('completed', fullCode)
+  }
+})
+
+function autoFocusNext(e, index) {
+  const value = e.target.value
+
+  if (value && index < 5) {
+    e.target.nextElementSibling?.focus()
+  } else if (!value && index > 0) {
+    e.target.previousElementSibling?.focus()
+  }
+}
 </script>
 
 <template>
-  <div ref="otpCont" class="code-container">
+  <div class="code-container">
     <input
+      v-for="(digit, index) in digits"
+      :key="index"
       type="text"
       class="code-box"
-      v-for="(number, index) in 6"
-      :key="number + index"
-      :autofocus="index === 0"
-      :placeholder="index + 1"
       maxlength="1"
-      @focus="!value"
-      @keydown="handleKeyDown($event, ind)"
+      v-model="digits[index]"
+      :autofocus="index === 0"
+      @input="(e) => autoFocusNext(e, index)"
     />
   </div>
 </template>
