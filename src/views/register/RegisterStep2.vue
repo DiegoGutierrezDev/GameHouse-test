@@ -5,9 +5,11 @@ import AppOTP from '@/components/AppOTP.vue'
 import PageWrapper from '../layouts/PageWrapper.vue'
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
 
 const otpValue = ref('')
 const userStore = useUserStore()
+const router = useRouter()
 const email = userStore.email.email
 
 async function verifyCode(code) {
@@ -20,6 +22,7 @@ async function verifyCode(code) {
     },
     body: JSON.stringify({ email: userStore.email.email, code }),
   })
+  router.push('/step3')
 }
 </script>
 
