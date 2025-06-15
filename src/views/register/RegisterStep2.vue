@@ -3,6 +3,11 @@ import AppBenefits from '@/components/AppBenefits.vue'
 import AppButton from '@/components/AppButton.vue'
 import AppOTP from '@/components/AppOTP.vue'
 import PageWrapper from '../layouts/PageWrapper.vue'
+
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
+const email = userStore.email.email
 </script>
 
 <template>
@@ -26,7 +31,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
     <template #title>
       <h1>Get verified!</h1>
       <h3>Enter the one-time code we sent to:</h3>
-      EMAIL
+      {{ email }}
     </template>
 
     <template #resend>

@@ -14,8 +14,9 @@ const userStore = useUserStore()
 function handleSubmit() {
   userStore.setEmail({
     email: email.value,
-    acepta: comercials.value,
+    comercials: comercials.value,
   })
+  fetch('/api/send-email?email=' + email.value)
   router.push('/step2')
 }
 </script>

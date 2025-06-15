@@ -6,9 +6,9 @@ export const useUserStore = defineStore('user', {
     comercials: false,
   }),
   actions: {
-    setEmail(email, acepta) {
+    setEmail(email, comercials) {
       this.email = email
-      this.comercials = acepta
+      this.comercials = comercials
     },
   },
 })
