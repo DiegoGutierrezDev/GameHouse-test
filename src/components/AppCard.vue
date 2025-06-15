@@ -1,21 +1,29 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+defineProps({
+  products: Object,
+})
+
+const selected = ref(null)
+</script>
 
 <template>
-  <div class="plan-card">
-    <div class="badge">Save 20%</div>
+  <div v-for="(product, index) in products" class="plan-card" :key="index">
+    <div v-if="index == 'year'" class="badge">Save 20%</div>
     <div class="card-header">
-      <input type="checkbox" class="checkbox-round" />
-      <h2 class="white-text">Annual</h2>
+      <input type="checkbox" class="checkbox-round" name="card" v-model="selected" />
+      <h2 class="white-text">{{ index == 'year' ? 'Annual' : 'Monthly' }}</h2>
     </div>
 
     <div style="" class="price-container">
-      <span class="white-text">$ 87.99</span>
-      <span class="white-text">/year</span>
+      <span class="white-text">{{ '$ ' + product.price }}</span>
+      <span class="white-text">{{ '/' + index }}</span>
     </div>
 
-    <p class="billing-note">Billed annually</p>
+    <p class="billing-note">Billed {{ index == 'year' ? 'annualy' : 'monthly' }}</p>
 
-    <div class="trial">7-day free trial</div>
+    <div class="trial">{{ product.trial_days }}-day free trial</div>
   </div>
 </template>
 
@@ -65,11 +73,23 @@
   border-radius: 50%;
   border: 2px solid #ddd;
   appearance: none;
+  position: relative;
+
   cursor: pointer;
 }
 
 .checkbox-round:checked {
-  background-color: #afeea7;
+  background-color: #4bbb3d;
+}
+
+.checkbox-round:checked::after {
+  content: '✔';
+  color: #2e3b56;
+  font-size: 1em;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 2px;
 }
 
 .badge {

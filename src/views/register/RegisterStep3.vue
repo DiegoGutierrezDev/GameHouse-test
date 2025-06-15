@@ -1,12 +1,13 @@
 <script setup>
 import AppButton from '@/components/AppButton.vue'
 import AppCard from '@/components/AppCard.vue'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
+
+const products = ref([])
 
 onMounted(async () => {
-  const res = await fetch('api/products')
-  const data = await res.json()
-  console.log(data)
+  const res = await fetch('/api/products')
+  products.value = await res.json()
 })
 </script>
 
@@ -14,8 +15,7 @@ onMounted(async () => {
   <main class="one-column" style="height: 100vh">
     <h1>Choose your plan</h1>
     <div class="columns" style="gap: 3em">
-      <AppCard></AppCard>
-      <AppCard></AppCard>
+      <AppCard :products="products"> </AppCard>
     </div>
 
     <div style="display: grid; justify-items: center">

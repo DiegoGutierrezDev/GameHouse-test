@@ -80,15 +80,15 @@ function handleValidateEmailCode(req, res, body) {
 function handleGetProducts(req, res) {
   console.log(`Sending products`)
   sendResponse(res, 200, {
-    monthly: {
-      price: '9.99',
-      currency: 'USD',
-      trial_days: 3,
-    },
     year: {
       price: '87.99',
       currency: 'USD',
       trial_days: 7,
+    },
+    monthly: {
+      price: '9.99',
+      currency: 'USD',
+      trial_days: 3,
     },
   })
 }
