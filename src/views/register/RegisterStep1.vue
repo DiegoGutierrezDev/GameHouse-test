@@ -2,6 +2,22 @@
 import AppBenefits from '@/components/AppBenefits.vue'
 import AppButton from '@/components/AppButton.vue'
 import PageWrapper from '../layouts/PageWrapper.vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useUserStore } from '@/stores/user'
+
+const email = ref('')
+const comercials = ref(false)
+const router = useRouter()
+const userStore = useUserStore()
+
+function handleSubmit() {
+  userStore.setEmail({
+    email: email.value,
+    acepta: comercials.value,
+  })
+  router.push('/step2')
+}
 </script>
 
 <template>
@@ -34,12 +50,20 @@ import PageWrapper from '../layouts/PageWrapper.vue'
     </template>
 
     <template #input>
-      <input type="text" class="input-text" placeholder="Email Address" />
-      <div>
-        <input type="checkbox" class="checkbox" id="comercial" />
-        <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
-      </div>
-      <AppButton text="Connect"></AppButton>
+      <form @submit.prevent="handleSubmit">
+        <input
+          type="email"
+          v-model="email"
+          class="input-text"
+          placeholder="Email Address"
+          required
+        />
+        <div>
+          <input type="checkbox" v-model="comercials" class="checkbox" />
+          <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
+        </div>
+        <AppButton text="Connect"></AppButton>
+      </form>
     </template>
   </PageWrapper>
 </template>

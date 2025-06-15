@@ -1,6 +1,13 @@
 <script setup>
 import AppButton from '@/components/AppButton.vue'
 import AppCard from '@/components/AppCard.vue'
+import { onMounted } from 'vue'
+
+onMounted(async () => {
+  const res = await fetch('api/products')
+  const data = await res.json()
+  console.log(data)
+})
 </script>
 
 <template>
