@@ -1,10 +1,10 @@
 <template>
   <div v-if="desktop" class="columns">
-    <div>
+    <div style="flex-direction: column; display: flex">
       <slot name="benefits" />
       <slot name="text" />
     </div>
-    <div class="white-text">
+    <div>
       <slot name="title" />
       <slot name="input" />
       <slot name="resend" />
@@ -17,6 +17,7 @@
     <slot name="input" />
     <slot name="button" />
     <slot name="text" />
+    <slot name="resend" />
   </div>
 </template>
 

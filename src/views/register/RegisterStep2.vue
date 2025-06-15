@@ -6,7 +6,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
 </script>
 
 <template>
-  <PageWrapper>
+  <PageWrapper class="columns white-text">
     <template #benefits>
       <div class="left-column">
         <AppBenefits

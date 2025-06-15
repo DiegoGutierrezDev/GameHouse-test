@@ -18,7 +18,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
     ></template>
 
     <template #text>
-      <div class="left-column">
+      <div style="margin-top: auto">
         <p style="color: white">
           By continuing, you agree to our<a href="https://company.gamehouse.com/">
             Terms of Service</a
@@ -35,9 +35,11 @@ import PageWrapper from '../layouts/PageWrapper.vue'
 
     <template #input>
       <input type="text" class="input-text" placeholder="Email Address" />
-      <input type="checkbox" class="checkbox" id="comercial" />
-      <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
-      <AppButton text="Connect" style="display: block; width: 100%; margin-top: 1em"></AppButton>
+      <div>
+        <input type="checkbox" class="checkbox" id="comercial" />
+        <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
+      </div>
+      <AppButton text="Connect"></AppButton>
     </template>
   </PageWrapper>
 </template>

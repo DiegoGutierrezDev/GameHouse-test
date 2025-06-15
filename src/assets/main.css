@@ -8,6 +8,8 @@ body {
   background: radial-gradient(circle at bottom left, #2e3b56 0%, #2f234d 40%, #1f1a3d 100%);
   min-height: 100vh;
   line-height: 1.6;
+  color: white;
+  text-align: center;
   font-family:
     Inter,
     -apple-system,
@@ -61,7 +63,6 @@ a {
 
 h1 {
   font-weight: 700;
-  color: white;
 }
 
 strong {
@@ -86,6 +87,7 @@ strong {
 .columns {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .input-text {
@@ -111,6 +113,14 @@ strong {
   cursor: pointer;
   margin-right: 0.8em;
   margin-top: 6em;
+}
+
+.left-column {
+  display: grid;
+  align-content: space-between;
+}
+.left-column p {
+  margin-top: auto;
 }
 
 @media (min-width: 641px) {
