@@ -1,35 +1,41 @@
-# GameHouse-test
+# 🧩 Vue 3 Technical Test
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto está desarrollado con **Vue 3**, usando la **Composition API**, **CSS puro** y **Pinia** para la gestión del estado.
 
-## Recommended IDE Setup
+## 🚀 Cómo iniciar el proyecto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Clona este repositorio o copia la carpeta del proyecto.
+2. Abre la terminal en la raíz del proyecto.
+3. Ejecuta los siguientes comandos:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+npm install        # Instala las dependencias
+npm run format     # Formatea el código (opcional)
+npm run dev        # Inicia el servidor de desarrollo de Vite
 ```
 
-### Compile and Hot-Reload for Development
+### 🔧 Backend (Fake API con Node.js)
 
-```sh
-npm run dev
+Para iniciar el servidor Node.js y poder usar los endpoints proporcionados:
+
+```bash
+node @/../server/server.cjs
 ```
 
-### Compile and Minify for Production
+> ⚠️ Asegúrate de tener **Node.js** instalado.  
+> Yo estoy usando la versión **v22.13.0**.
 
-```sh
-npm run build
-```
+## 🧱 Estructura y decisiones técnicas
 
-### Lint with [ESLint](https://eslint.org/)
+- Está desarrollado con **componentes reutilizables** en mente.
+- Se ha creado un componente tipo layout llamado **`PageWrapper`**, que permite alternar entre versiones móvil y escritorio sin ensuciar el resto del código.
+- Se usa **Pinia** para almacenar datos clave entre páginas, como:
+  - El **correo electrónico** ingresado.
+  - El **código de verificación** enviado por email.
 
-```sh
-npm run lint
-```
+## ✅ Funcionalidades implementadas
+
+- Envío y validación de email con código OTP.
+- Navegación paso a paso con estado compartido.
+- Diseño adaptativo para móvil y escritorio.
+- Componente OTP reutilizable.
