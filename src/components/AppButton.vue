@@ -9,13 +9,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <button :class="props.theme">
+  <button type="submit" :class="props.theme">
     {{ props.text }}
   </button>
 </template>
 
 <style scoped>
 .M-purple {
+  cursor: pointer;
   background-color: #c2b4f7;
   height: 3.3em;
   width: 80%;
@@ -27,6 +28,7 @@ const props = defineProps({
 }
 
 .L-orange {
+  cursor: pointer;
   background-color: #fccd61;
   height: 3.3em;
   width: 100%;
