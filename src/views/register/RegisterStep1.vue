@@ -63,7 +63,7 @@ function handleSubmit() {
           <input type="checkbox" v-model="comercials" class="checkbox" />
           <label for="comercial">Send Me Offers, News, and Fun Stuff!</label>
         </div>
-        <AppButton text="Connect"></AppButton>
+        <AppButton text="Connect" style="justify-self: center"></AppButton>
       </form>
     </template>
   </PageWrapper>
