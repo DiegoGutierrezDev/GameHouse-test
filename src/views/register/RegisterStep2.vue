@@ -13,14 +13,18 @@ const router = useRouter()
 const email = userStore.email.email
 
 async function verifyCode(code) {
-  console.log('Código recibido del hijo:', code)
-
-  await fetch('/api/validate-email', {
+  const res = await fetch('/api/validate-email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email: userStore.email.email, code }),
+  })
+  const data = await res.json()
+
+  const user_id = data.user_id
+  userStore.setUser_id({
+    user_id: user_id,
   })
   router.push('/step3')
 }
