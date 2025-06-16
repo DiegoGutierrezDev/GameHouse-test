@@ -38,4 +38,4 @@ node @/../server/server.cjs
 - Envío y validación de email con código OTP.
 - Navegación paso a paso con estado compartido.
 - Diseño adaptativo para móvil y escritorio.
-- Componente OTP reutilizable.
+- Componentes reutilizables como inputs OTP, botones, tarjetas, etc.
