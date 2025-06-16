@@ -3,6 +3,37 @@ import AppBenefits from '@/components/AppBenefits.vue'
 import AppButton from '@/components/AppButton.vue'
 import AppOTP from '@/components/AppOTP.vue'
 import PageWrapper from '../layouts/PageWrapper.vue'
+import { ref } from 'vue'
+import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
+
+const otpValue = ref('')
+const userStore = useUserStore()
+const router = useRouter()
+const email = userStore.email.email
+const errorMessage = ref('')
+
+async function verifyCode(code) {
+  const res = await fetch('/api/validate-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email: userStore.email.email, code }),
+  })
+  const data = await res.json()
+
+  if (!res.ok) {
+    errorMessage.value = data.error || 'Error validating code'
+    return
+  }
+
+  const user_id = data.user_id
+  userStore.setUser_id({
+    user_id: user_id,
+  })
+  router.push('/step3')
+}
 </script>
 
 <template>
@@ -20,13 +51,16 @@ import PageWrapper from '../layouts/PageWrapper.vue'
     </template>
 
     <template #input>
-      <AppOTP style="margin-top: 1.4em"></AppOTP>
+      <AppOTP style="margin-top: 1.4em" v-model:otp="otpValue" @completed="verifyCode"> </AppOTP>
+      <p v-if="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
     </template>
 
     <template #title>
       <h1>Get verified!</h1>
       <h3>Enter the one-time code we sent to:</h3>
-      EMAIL
+      {{ email }}
     </template>
 
     <template #resend>
@@ -36,7 +70,7 @@ import PageWrapper from '../layouts/PageWrapper.vue'
       </p></template
     >
     <template #button>
-      <AppButton text="Verify"></AppButton>
+      <AppButton text="Verify" @click="verifyCode"></AppButton>
     </template>
   </PageWrapper>
 </template>

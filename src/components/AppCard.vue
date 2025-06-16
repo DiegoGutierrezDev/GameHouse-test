@@ -1,52 +1,78 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+defineProps({
+  products: Object,
+})
+
+const selected = ref('year')
+</script>
 
 <template>
-  <div class="plan-card">
-    <div class="badge">Save 20%</div>
+  <div
+    v-for="(product, index) in products"
+    class="plan-card"
+    :key="index"
+    :class="{ 'selected-border ': selected == index }"
+  >
+    <div v-if="index == 'year'" class="badge">Save 20%</div>
     <div class="card-header">
-      <input type="checkbox" class="checkbox-round" />
-      <h2 class="white-text">Annual</h2>
+      <input type="radio" class="checkbox-round" name="card" v-model="selected" :value="index" />
+      <h2 class="white-text">{{ index == 'year' ? 'Annual' : 'Monthly' }}</h2>
     </div>
 
     <div style="" class="price-container">
-      <span class="white-text">$ 87.99</span>
-      <span class="white-text">/year</span>
+      <span class="white-text">{{ '$ ' + product.price }}</span>
+      <span class="white-text">{{ '/' + index }}</span>
     </div>
 
-    <p class="billing-note">Billed annually</p>
+    <p class="billing-note">Billed {{ index == 'year' ? 'annualy' : 'monthly' }}</p>
 
-    <div class="trial">7-day free trial</div>
+    <div class="trial">{{ product.trial_days }}-day free trial</div>
   </div>
 </template>
 
 <style scoped>
+.selected-border {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 1em;
+  border-image: linear-gradient(90deg, #ffc978, #fd6a6a, #b991c0, #7ed6df) 1;
+}
 .plan-card {
+  display: grid;
+  margin-left: 1em;
+  margin-right: 1em;
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
   background: linear-gradient(to right, #2f234d, #3c2e72);
-  border-radius: 1em;
-  border: 3px solid transparent;
   text-align: center;
   color: white;
-  font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  background-clip: padding-box;
-  border-image: linear-gradient(90deg, #ffc978, #fd6a6a, #b991c0, #7ed6df) 1;
+}
+.card-header {
+  padding-left: 0.4em;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-right: 0.4em;
+  background-color: #5a4a94;
+  display: grid;
+  justify-content: start;
+  align-items: center;
+}
+@media (min-width: 641px) {
+  .plan-card {
+    display: block;
+  }
+
+  .card-header {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .price-container {
   margin-top: 12px;
   padding-left: 5.8em;
   padding-right: 5.8em;
-}
-
-.card-header {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  background-color: #5a4a94;
-  display: grid;
-  justify-content: start;
-  align-items: center;
 }
 
 .white-text {
@@ -65,11 +91,23 @@
   border-radius: 50%;
   border: 2px solid #ddd;
   appearance: none;
+  position: relative;
+
   cursor: pointer;
 }
 
 .checkbox-round:checked {
-  background-color: #afeea7;
+  background-color: #4bbb3d;
+}
+
+.checkbox-round:checked::after {
+  content: '✔';
+  color: #2e3b56;
+  font-size: 1em;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 2px;
 }
 
 .badge {
