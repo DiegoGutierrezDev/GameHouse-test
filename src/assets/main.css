@@ -146,6 +146,33 @@ strong {
   align-items: center;
 }
 
+.modify-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: transparent;
+  color: #7b3fe4;
+  border: 2px solid #7b3fe4;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.round-back-btn {
+  background-color: #7b3fe4;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #3a1e72;
+}
+
 @media (min-width: 641px) {
   .one-column {
     display: grid;

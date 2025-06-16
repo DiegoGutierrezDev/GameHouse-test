@@ -31,8 +31,14 @@ async function start_trial() {
 </script>
 
 <template>
+  <div style="justify-self: start; margin-top: 0.5em">
+    <button class="round-back-btn" @click="router.push('/step2')">&lt;</button>
+  </div>
   <main class="one-column" style="height: 100vh">
-    <h1>Choose your plan</h1>
+    <div class="" style="display: flex; align-items: center; justify-content: space-between">
+      <h1>Choose your plan</h1>
+    </div>
+
     <div class="columns" style="gap: 3em">
       <AppCard :products="products"> </AppCard>
       <p v-if="errorMessage" class="error-message">
