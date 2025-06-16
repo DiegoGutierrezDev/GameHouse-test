@@ -8,6 +8,7 @@ import { useUserStore } from '@/stores/user'
 const products = ref([])
 const router = useRouter()
 const userStore = useUserStore()
+const errorMessage = ref('')
 
 onMounted(async () => {
   const res = await fetch('/api/products')
@@ -16,8 +17,15 @@ onMounted(async () => {
 
 const user_id = userStore.user_id.user_id
 
-function start_trial() {
-  fetch('/api/start-trial?user_id=' + user_id)
+async function start_trial() {
+  const res = await fetch('/api/start-trial?user_id=' + user_id)
+  const data = await res.json()
+
+  if (!res.ok) {
+    errorMessage.value = data.error || 'Choose a plan'
+    return
+  }
+
   router.push('/step4')
 }
 </script>
@@ -27,6 +35,9 @@ function start_trial() {
     <h1>Choose your plan</h1>
     <div class="columns" style="gap: 3em">
       <AppCard :products="products"> </AppCard>
+      <p v-if="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
     </div>
 
     <div style="display: grid; justify-items: center">

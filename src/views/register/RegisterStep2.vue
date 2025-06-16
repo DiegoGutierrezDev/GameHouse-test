@@ -11,6 +11,7 @@ const otpValue = ref('')
 const userStore = useUserStore()
 const router = useRouter()
 const email = userStore.email.email
+const errorMessage = ref('')
 
 async function verifyCode(code) {
   const res = await fetch('/api/validate-email', {
@@ -21,6 +22,11 @@ async function verifyCode(code) {
     body: JSON.stringify({ email: userStore.email.email, code }),
   })
   const data = await res.json()
+
+  if (!res.ok) {
+    errorMessage.value = data.error || 'Error validating code'
+    return
+  }
 
   const user_id = data.user_id
   userStore.setUser_id({
@@ -46,6 +52,9 @@ async function verifyCode(code) {
 
     <template #input>
       <AppOTP style="margin-top: 1.4em" v-model:otp="otpValue" @completed="verifyCode"> </AppOTP>
+      <p v-if="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
     </template>
 
     <template #title>
