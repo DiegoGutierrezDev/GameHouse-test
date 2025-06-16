@@ -1,4 +1,5 @@
 <template>
+  <slot name="backButton"></slot>
   <div v-if="desktop" class="columns">
     <div style="flex-direction: column; display: flex">
       <slot name="benefits" />

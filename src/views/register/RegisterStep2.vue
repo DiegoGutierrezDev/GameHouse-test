@@ -38,6 +38,11 @@ async function verifyCode(code) {
 
 <template>
   <PageWrapper class="columns white-text">
+    <template #backButton>
+      <div style="display: flex">
+        <button class="modify-button" @click="router.push('/')">← Modify email</button>
+      </div>
+    </template>
     <template #benefits>
       <div class="left-column">
         <AppBenefits

@@ -146,6 +146,23 @@ strong {
   align-items: center;
 }
 
+.modify-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: transparent;
+  color: #7b3fe4;
+  border: 2px solid #7b3fe4;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  user-select: none;
+}
+
 @media (min-width: 641px) {
   .one-column {
     display: grid;
