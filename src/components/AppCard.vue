@@ -5,14 +5,14 @@ defineProps({
   products: Object,
 })
 
-const selected = ref(false)
+const selected = ref('year')
 </script>
 
 <template>
   <div v-for="(product, index) in products" class="plan-card" :key="index">
     <div v-if="index == 'year'" class="badge">Save 20%</div>
     <div class="card-header">
-      <input type="radio" class="checkbox-round" name="card" v-model="selected" />
+      <input type="radio" class="checkbox-round" name="card" v-model="selected" :value="index" />
       <h2 class="white-text">{{ index == 'year' ? 'Annual' : 'Monthly' }}</h2>
     </div>
 
